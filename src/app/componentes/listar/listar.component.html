@@ -1,0 +1,54 @@
+<div class="container">
+  
+    <div class="card" *ngFor="let persona of personas">
+      <div class="card-header">
+        <h4>Mostrar datos</h4>
+      </div>
+      <div class="card-contenedor">
+        <p hidden>{{persona.nombre}}</p>
+        <p>Nombre:</p>
+        <p>{{persona.nombre}}</p>
+        <br>
+        <p>Apellido:</p>
+        <p>{{persona.apellido}}</p>
+      </div>
+      <div class="btn">
+        
+        <button class="btn btn-danger" (click)="eliminarPersona(persona)">{{eliminar}}</button>
+        <button class="btn btn-primary" (click)="mostrarPersona(persona, m_editarPersona)">{{editar}}</button>
+        
+      </div>
+    </div>
+</div>
+<ng-template  #m_editarPersona let-c="close" let-d="dismiss" >
+
+        <div class="modal-header">
+            <h3>Editar persona: </h3>
+            <div class="title-modal"></div>
+            <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+        </div>
+        <div class="modal-body">
+            <div>
+              <form [formGroup]="form" novalidate >
+                <div class="from-group">
+                  
+                  <input type="text" formControlName="id" hidden>
+                </div>
+               <div class="from-group">
+                 <label for="nombre">Nombre:</label>
+                 <input type="text" formControlName="nombre" >
+               </div>
+                <div class="from-group">
+                    <label for="nombre">Apellido:</label>
+                    <input type="text" formControlName="apellido" >
+                </div>
+                <div class="modal-footer"> 
+                    <button type="button" (click)="save($event)" class="btn btn-success">Guardar</button> 
+                    
+                    <button type="button" class="btn btn-danger"(click)="cerrarModal($event)">Cancelar</button>
+                </div> 
+              </form>
+            </div>
+        </div>
+       
+</ng-template>

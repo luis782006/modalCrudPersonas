@@ -1,0 +1,47 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:5px;
+    margin-top: 10px;
+}
+.card{
+    background-color:rgba(247, 247, 247, 0.911);
+    min-width: 40vw;
+    box-shadow: 1px 2px 25px rgb(173, 170, 170) ;
+    padding: 20px;
+}
+p{
+    display: inline;
+}
+.card-header{
+    height:50px;
+    background-color: rgb(211, 211, 211);
+    
+}
+.card-header h3{
+    margin: 20px;
+    padding-top:10px;
+}
+.card-contenedor{
+    padding:20px;
+}
+.card-contenedor p{
+    margin-top: 10px;
+}
+.btn button{
+    float: right;
+    margin-right: 10px;
+    padding-right: 5px;
+}
+
+.title-modal{
+    margin-left: 10px;
+}
+.from-group{
+    margin: 10px 0px 0px 20px;
+}
+.from-group label{
+    margin-right: 10px;
+}
